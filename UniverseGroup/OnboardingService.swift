@@ -8,7 +8,9 @@ import Foundation
 import RxSwift
 
 class OnboardingService {
+    public static var shared = OnboardingService()
     func fetchOnboardingData(completion: @escaping ([OnboardingStep]?) -> Void) {
+        
         guard let url = URL(string: "https://test-ios.universeapps.limited/onboarding") else {
             completion(nil)
             return

@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene as! UIWindowScene)
         window?.overrideUserInterfaceStyle = .light
-        let viewModel = QuestionViewModel()
-        let viewController = QuestionViewController(viewModel: viewModel)
+        let viewModel = FormViewModel()
+        let viewController = FormViewController(viewModel: viewModel)
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
