@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import SnapKit
+import SnapKit
 
 class TermsView: UIView {
     
@@ -23,33 +23,28 @@ class TermsView: UIView {
     }
     
     private func setupView() {
-        // Настройка метки
         termsLabel.numberOfLines = 0
         termsLabel.textAlignment = .center
         
-        // Атрибутированный текст
-        let text = "By continuing you accept our: "
+        let text = "By continuing you accept our:\n "
         let termsOfUse = "Terms of Use"
         let privacyPolicy = "Privacy Policy"
         let subscriptionTerms = "Subscription Terms"
         
         let attributedString = NSMutableAttributedString(string: text)
-        let termsOfUseRange = NSRange(location: text.count, length: termsOfUse.count)
-        let privacyPolicyRange = NSRange(location: text.count + termsOfUse.count + 2, length: privacyPolicy.count)
-        let subscriptionTermsRange = NSRange(location: text.count + termsOfUse.count + privacyPolicy.count + 4, length: subscriptionTerms.count)
         
-        attributedString.append(NSAttributedString(string: termsOfUse, attributes: [.foregroundColor: UIColor.blue, .underlineStyle: NSUnderlineStyle.single.rawValue]))
+        attributedString.append(NSAttributedString(string: termsOfUse, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
         attributedString.append(NSAttributedString(string: ", ", attributes: [:]))
-        attributedString.append(NSAttributedString(string: privacyPolicy, attributes: [.foregroundColor: UIColor.blue, .underlineStyle: NSUnderlineStyle.single.rawValue]))
+        attributedString.append(NSAttributedString(string: privacyPolicy, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
         attributedString.append(NSAttributedString(string: ", ", attributes: [:]))
-        attributedString.append(NSAttributedString(string: subscriptionTerms, attributes: [.foregroundColor: UIColor.blue, .underlineStyle: NSUnderlineStyle.single.rawValue]))
+        attributedString.append(NSAttributedString(string: subscriptionTerms, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
         
         termsLabel.attributedText = attributedString
         termsLabel.isUserInteractionEnabled = true
-        
+        termsLabel.font = UIFont.font(.SFPRODISPLAYREGULAR, ofSize: 12)
         addSubview(termsLabel)
         termsLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(20)
+            make.edges.equalToSuperview()
         }
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
@@ -64,13 +59,10 @@ class TermsView: UIView {
         
         if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: termsOfUseRange!) {
             print("Terms of Use tapped")
-            // Handle Terms of Use tap
         } else if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: privacyPolicyRange!) {
             print("Privacy Policy tapped")
-            // Handle Privacy Policy tap
         } else if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: subscriptionTermsRange!) {
             print("Subscription Terms tapped")
-            // Handle Subscription Terms tap
         }
     }
 }

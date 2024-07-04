@@ -16,6 +16,7 @@ class FinalViewController: UIViewController {
     private let mainText = UILabel()
     private let subText = UILabel()
     private let continueButton = UIButton()
+    private let stackView = UIStackView()
     private let termsView = TermsView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +24,27 @@ class FinalViewController: UIViewController {
     }
     
     private func setupUI() {
+        
         view.backgroundColor = .white
 
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
+        
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "Onboarding4Light")
         view.addSubview(imageView)
 
         continueButton.setTitle("Start Now", for: .normal)
         continueButton.setTitleColor(.white, for: .normal)
+        continueButton.layer.shadowColor = UIColor(white: 0.5, alpha: 0.25).cgColor
+        continueButton.layer.shadowOpacity = 1
+        continueButton.layer.shadowOffset = CGSize(width: 0, height: -4)
+        continueButton.layer.shadowRadius = 36
         continueButton.backgroundColor = .black
         continueButton.layer.cornerRadius = 28
         continueButton.layer.masksToBounds = true
         continueButton.titleLabel?.font = UIFont.font(.SFPRODISPLAYBOLD, ofSize: 17)
-                
         view.addSubview(continueButton)
 
         mainText.text = "Discover all\nPremium features"
@@ -55,7 +64,7 @@ class FinalViewController: UIViewController {
         closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         closeButton.tintColor = UIColor(red: 58/255, green: 60/255, blue: 61/255, alpha: 1)
         view.addSubview(closeButton)
-
+        
         imageView.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top)
             make.left.equalTo(view)
@@ -77,20 +86,28 @@ class FinalViewController: UIViewController {
             make.left.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
         }
-        view.addSubview(termsView)
+        
+        stackView.addArrangedSubview(continueButton)
+        stackView.addArrangedSubview(termsView)
+        view.addSubview(stackView)
+        
+        stackView.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(104)
+        }
         termsView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-            make.left.equalToSuperview().offset(24)
-            make.right.equalToSuperview().offset(-24)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(29)
         }
         continueButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-40)
-            //make.bottom.equalTo(termsView.snp.top).offset(-20)
-            make.height.equalTo(56)
-            make.left.equalToSuperview().offset(24)
-            make.right.equalToSuperview().offset(-24)
             make.centerX.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(56)
         }
         
         

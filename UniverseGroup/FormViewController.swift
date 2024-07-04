@@ -30,7 +30,7 @@ class FormViewController: UIViewController {
         setupUI()
         bindViewModel()
     }
-    
+
     private func setupUI() {
         view.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 245/255, alpha: 1)
         mainText.text = "Let’s setup App for you"
@@ -46,12 +46,17 @@ class FormViewController: UIViewController {
         tableView.dataSource = viewModel
         tableView.delegate = viewModel
         tableView.separatorStyle = .none
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "AnswerCell")
+        tableView.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.identifier)
         tableView.backgroundColor = .clear
+        tableView.sectionHeaderTopPadding = 0
         view.addSubview(tableView)
         
         continueButton.setTitle("Continue", for: .normal)
-        continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 2002/255, alpha: 1), for: .normal)
+        continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1), for: .normal)
+        continueButton.layer.shadowColor = UIColor(white: 0.5, alpha: 0.25).cgColor
+        continueButton.layer.shadowOpacity = 1
+        continueButton.layer.shadowOffset = CGSize(width: 0, height: -4)
+        continueButton.layer.shadowRadius = 36
         continueButton.backgroundColor = .white
         continueButton.layer.cornerRadius = 28
         continueButton.layer.masksToBounds = true
@@ -70,13 +75,13 @@ class FormViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(questionLabel.snp.bottom).offset(20)
+            make.top.equalTo(questionLabel.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(20)
             make.bottom.equalTo(continueButton.snp.top).offset(-20)
         }
         
         continueButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-40)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-104)
             make.height.equalTo(56)
             make.left.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
@@ -95,7 +100,7 @@ class FormViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] question in
                 self?.continueButton.isUserInteractionEnabled = false
-                self?.continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 2002/255, alpha: 1), for: .normal)
+                self?.continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1), for: .normal)
                 self?.continueButton.backgroundColor = .white
                 
                 self?.questionLabel.text = question.question

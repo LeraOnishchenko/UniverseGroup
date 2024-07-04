@@ -6,62 +6,6 @@
 //
 import RxSwift
 
-protocol FormViewModelInput {
-    var nextButtonTapped: AnyObserver<Void> { get }
-    var cellSelected: AnyObserver<String> { get }
-}
-
-protocol FormViewModelOutput {
-    var question: Observable<OnboardingStep> { get }
-    var isCompleted: Observable<Bool> { get }
-    var selectedAnswer: Observable<String?> {get}
-}
-
-extension FormViewModel: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if questions.count == 0{
-            return 0
-        }
-        return questions[currentIndex].answers.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.textLabel?.textColor = .white
-        }
-        cellSelected.onNext(questions[currentIndex].answers[row])
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                cell.textLabel?.textColor = .black
-            }
-        }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath)
-        let answers = questions[currentIndex].answers
-        
-        cell.textLabel?.text = answers[indexPath.row]
-        cell.textLabel?.textAlignment = .left
-        cell.textLabel?.textColor = .black
-        cell.textLabel?.font = UIFont.font(.SFPRODISPLAYREGULAR, ofSize: 16)
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = UIColor(red: 71/255, green: 190/255, blue: 154/255, alpha: 1)
-        cell.selectedBackgroundView = selectedBackgroundView
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 52
-    }
-    
-    
-}
-
 class FormViewModel: NSObject, FormViewModelInput, FormViewModelOutput {
     var nextButtonTapped: AnyObserver<Void>
     var cellSelected: AnyObserver<String>
@@ -131,5 +75,50 @@ class FormViewModel: NSObject, FormViewModelInput, FormViewModelOutput {
             isCompletedSubject.onNext(true)
         }
     }
+    
+}
+extension FormViewModel: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if questions.count == 0{
+            return 0
+        }
+        return questions[currentIndex].answers.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        cellSelected.onNext(questions[currentIndex].answers[section])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
+        let answers = questions[currentIndex].answers
+        cell.configare(text: answers[indexPath.section])
+        let selectedBackgroundView = UIView()
+        selectedBackgroundView.backgroundColor = UIColor(red: 71/255, green: 190/255, blue: 154/255, alpha: 1)
+        cell.selectedBackgroundView = selectedBackgroundView
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
+    
     
 }
