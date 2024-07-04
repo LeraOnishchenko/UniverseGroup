@@ -75,8 +75,8 @@ class FormViewModel: NSObject, FormViewModelInput, FormViewModelOutput {
     }
 
     private func showNextQuestion() {
-        currentIndex += 1
-        if currentIndex < questions.count {
+        if currentIndex < questions.count - 1 {
+            currentIndex += 1
             showCurrentQuestion()
         } else {
             isCompletedSubject.onNext(true)
