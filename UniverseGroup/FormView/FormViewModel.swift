@@ -54,11 +54,18 @@ class FormViewModel: NSObject, FormViewModelInput, FormViewModelOutput {
     }
     
     private func fetchQuestionsFromEndpoint() {
-        OnboardingService.shared.fetchOnboardingData { [weak self] steps in
-            self?.questions = steps ?? []
-            self?.currentIndex = 0
-            self?.showCurrentQuestion()
-        }
+        OnboardingService.shared.fetchOnboardingDataSingle()
+            .subscribe(onSuccess: { [weak self] (response) in
+                self?.questions = response
+                self?.currentIndex = 0
+                self?.showCurrentQuestion()
+            },
+                       onFailure: { [weak self] (err) in
+                self?.questions = []
+                self?.currentIndex = 0
+                self?.showCurrentQuestion()
+            })
+            .disposed(by: disposeBag)
     }
 
     private func showCurrentQuestion() {
@@ -109,7 +116,7 @@ extension FormViewModel: UITableViewDataSource, UITableViewDelegate {
         let answers = questions[currentIndex].answers
         cell.configare(text: answers[indexPath.section])
         let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = UIColor(red: 71/255, green: 190/255, blue: 154/255, alpha: 1)
+        selectedBackgroundView.backgroundColor = .cellSelect
         cell.selectedBackgroundView = selectedBackgroundView
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true

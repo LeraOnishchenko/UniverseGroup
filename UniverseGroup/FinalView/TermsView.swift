@@ -31,13 +31,13 @@ class TermsView: UIView {
         let privacyPolicy = "Privacy Policy"
         let subscriptionTerms = "Subscription Terms"
         
-        let attributedString = NSMutableAttributedString(string: text)
+        let attributedString = NSMutableAttributedString(string: text, attributes: [.foregroundColor: UIColor.subText])
         
-        attributedString.append(NSAttributedString(string: termsOfUse, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
-        attributedString.append(NSAttributedString(string: ", ", attributes: [:]))
-        attributedString.append(NSAttributedString(string: privacyPolicy, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
-        attributedString.append(NSAttributedString(string: ", ", attributes: [:]))
-        attributedString.append(NSAttributedString(string: subscriptionTerms, attributes: [.foregroundColor: UIColor(red: 32/255, green: 139/255, blue: 255/255, alpha: 1)]))
+        attributedString.append(NSAttributedString(string: termsOfUse, attributes: [.foregroundColor: UIColor.termsText]))
+        attributedString.append(NSAttributedString(string: ", ", attributes: [.foregroundColor: UIColor.subText]))
+        attributedString.append(NSAttributedString(string: privacyPolicy, attributes: [.foregroundColor: UIColor.termsText]))
+        attributedString.append(NSAttributedString(string: ", ", attributes: [.foregroundColor: UIColor.subText]))
+        attributedString.append(NSAttributedString(string: subscriptionTerms, attributes: [.foregroundColor: UIColor.termsText]))
         
         termsLabel.attributedText = attributedString
         termsLabel.isUserInteractionEnabled = true
@@ -58,10 +58,19 @@ class TermsView: UIView {
         let subscriptionTermsRange = (text as NSString?)?.range(of: "Subscription Terms")
         
         if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: termsOfUseRange!) {
+            if let url = URL(string: "https://www.example.com") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
             print("Terms of Use tapped")
         } else if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: privacyPolicyRange!) {
+            if let url = URL(string: "https://www.example.com") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
             print("Privacy Policy tapped")
         } else if recognizer.didTapAttributedTextInLabel(label: recognizer.view as! UILabel, inRange: subscriptionTermsRange!) {
+            if let url = URL(string: "https://www.example.com") {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
             print("Subscription Terms tapped")
         }
     }

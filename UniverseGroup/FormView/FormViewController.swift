@@ -32,14 +32,13 @@ class FormViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 245/255, alpha: 1)
+        view.backgroundColor = .background
         mainText.text = "Let’s setup App for you"
         mainText.textAlignment = .left
         mainText.font = UIFont.font(.SFPRODISPLAYBOLD, ofSize: 26)
         view.addSubview(mainText)
         
         questionLabel.textAlignment = .left
-        //lox
         questionLabel.font = UIFont.font(.SFPRODISPLAYMEDIUM, ofSize: 20)
         view.addSubview(questionLabel)
         
@@ -52,7 +51,7 @@ class FormViewController: UIViewController {
         view.addSubview(tableView)
         
         continueButton.setTitle("Continue", for: .normal)
-        continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1), for: .normal)
+        continueButton.setTitleColor(.buttonTextUnselected, for: .normal)
         continueButton.layer.shadowColor = UIColor(white: 0.5, alpha: 0.25).cgColor
         continueButton.layer.shadowOpacity = 1
         continueButton.layer.shadowOffset = CGSize(width: 0, height: -4)
@@ -100,7 +99,7 @@ class FormViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] question in
                 self?.continueButton.isUserInteractionEnabled = false
-                self?.continueButton.setTitleColor(UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1), for: .normal)
+                self?.continueButton.setTitleColor(.buttonTextUnselected, for: .normal)
                 self?.continueButton.backgroundColor = .white
                 
                 self?.questionLabel.text = question.question

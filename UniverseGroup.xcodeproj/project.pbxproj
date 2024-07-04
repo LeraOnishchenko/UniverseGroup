@@ -13,19 +13,16 @@
 		CF5B98942C349CDF00C3B3E9 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98932C349CDF00C3B3E9 /* FormViewController.swift */; };
 		CF5B989A2C35C3E400C3B3E9 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98992C35C3E400C3B3E9 /* FinalViewController.swift */; };
 		CF5B98AF2C35C96A00C3B3E9 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98AE2C35C96A00C3B3E9 /* UIFont.swift */; };
-		CF5B98BD2C35DA6C00C3B3E9 /* SFPRODISPLAYBLACKITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B32C35DA6C00C3B3E9 /* SFPRODISPLAYBLACKITALIC.OTF */; };
 		CF5B98BE2C35DA6C00C3B3E9 /* SFPRODISPLAYBOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B42C35DA6C00C3B3E9 /* SFPRODISPLAYBOLD.otf */; };
-		CF5B98BF2C35DA6C00C3B3E9 /* SFPRODISPLAYHEAVYITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B52C35DA6C00C3B3E9 /* SFPRODISPLAYHEAVYITALIC.OTF */; };
-		CF5B98C02C35DA6C00C3B3E9 /* SFPRODISPLAYLIGHTITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B62C35DA6C00C3B3E9 /* SFPRODISPLAYLIGHTITALIC.OTF */; };
 		CF5B98C12C35DA6C00C3B3E9 /* SFPRODISPLAYMEDIUM.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B72C35DA6C00C3B3E9 /* SFPRODISPLAYMEDIUM.otf */; };
 		CF5B98C22C35DA6C00C3B3E9 /* SFPRODISPLAYREGULAR.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B82C35DA6C00C3B3E9 /* SFPRODISPLAYREGULAR.otf */; };
-		CF5B98C32C35DA6C00C3B3E9 /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98B92C35DA6C00C3B3E9 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */; };
-		CF5B98C42C35DA6C00C3B3E9 /* SFPRODISPLAYTHINITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98BA2C35DA6C00C3B3E9 /* SFPRODISPLAYTHINITALIC.OTF */; };
-		CF5B98C52C35DA6C00C3B3E9 /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98BB2C35DA6C00C3B3E9 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */; };
 		CF5B98C72C35E05200C3B3E9 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98C62C35E05200C3B3E9 /* TermsView.swift */; };
 		CF5B98CA2C35F3C100C3B3E9 /* FormViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98C92C35F3C100C3B3E9 /* FormViewProtocol.swift */; };
 		CF5B98CE2C35F71300C3B3E9 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98CD2C35F71300C3B3E9 /* FormTableViewCell.swift */; };
 		CF5B98D02C367B1800C3B3E9 /*  Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CF5B98CF2C367B1800C3B3E9 /*  Configuration.storekit */; };
+		CF5B98DA2C36973500C3B3E9 /* SubsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98D92C36973500C3B3E9 /* SubsViewModel.swift */; };
+		CF5B98DC2C369BF000C3B3E9 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98DB2C369BF000C3B3E9 /* IAPService.swift */; };
+		CF5B98DE2C36B55200C3B3E9 /* SingleExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B98DD2C36B55200C3B3E9 /* SingleExtention.swift */; };
 		CFBC4BBB2C31A5E300561732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC4BBA2C31A5E300561732 /* AppDelegate.swift */; };
 		CFBC4BBD2C31A5E300561732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBC4BBC2C31A5E300561732 /* SceneDelegate.swift */; };
 		CFBC4BC42C31A5E400561732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBC4BC32C31A5E400561732 /* Assets.xcassets */; };
@@ -55,19 +52,16 @@
 		CF5B98932C349CDF00C3B3E9 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		CF5B98992C35C3E400C3B3E9 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 		CF5B98AE2C35C96A00C3B3E9 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		CF5B98B32C35DA6C00C3B3E9 /* SFPRODISPLAYBLACKITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBLACKITALIC.OTF; sourceTree = "<group>"; };
 		CF5B98B42C35DA6C00C3B3E9 /* SFPRODISPLAYBOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBOLD.otf; sourceTree = "<group>"; };
-		CF5B98B52C35DA6C00C3B3E9 /* SFPRODISPLAYHEAVYITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYHEAVYITALIC.OTF; sourceTree = "<group>"; };
-		CF5B98B62C35DA6C00C3B3E9 /* SFPRODISPLAYLIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYLIGHTITALIC.OTF; sourceTree = "<group>"; };
 		CF5B98B72C35DA6C00C3B3E9 /* SFPRODISPLAYMEDIUM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYMEDIUM.otf; sourceTree = "<group>"; };
 		CF5B98B82C35DA6C00C3B3E9 /* SFPRODISPLAYREGULAR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYREGULAR.otf; sourceTree = "<group>"; };
-		CF5B98B92C35DA6C00C3B3E9 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYSEMIBOLDITALIC.OTF; sourceTree = "<group>"; };
-		CF5B98BA2C35DA6C00C3B3E9 /* SFPRODISPLAYTHINITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYTHINITALIC.OTF; sourceTree = "<group>"; };
-		CF5B98BB2C35DA6C00C3B3E9 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYULTRALIGHTITALIC.OTF; sourceTree = "<group>"; };
 		CF5B98C62C35E05200C3B3E9 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		CF5B98C92C35F3C100C3B3E9 /* FormViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewProtocol.swift; sourceTree = "<group>"; };
 		CF5B98CD2C35F71300C3B3E9 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		CF5B98CF2C367B1800C3B3E9 /*  Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = " Configuration.storekit"; sourceTree = "<group>"; };
+		CF5B98D92C36973500C3B3E9 /* SubsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsViewModel.swift; sourceTree = "<group>"; };
+		CF5B98DB2C369BF000C3B3E9 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
+		CF5B98DD2C36B55200C3B3E9 /* SingleExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleExtention.swift; sourceTree = "<group>"; };
 		CFBC4BB72C31A5E300561732 /* UniverseGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniverseGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBC4BBA2C31A5E300561732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBC4BBC2C31A5E300561732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,16 +113,64 @@
 			isa = PBXGroup;
 			children = (
 				CF5B98B42C35DA6C00C3B3E9 /* SFPRODISPLAYBOLD.otf */,
-				CF5B98B32C35DA6C00C3B3E9 /* SFPRODISPLAYBLACKITALIC.OTF */,
-				CF5B98B52C35DA6C00C3B3E9 /* SFPRODISPLAYHEAVYITALIC.OTF */,
-				CF5B98B62C35DA6C00C3B3E9 /* SFPRODISPLAYLIGHTITALIC.OTF */,
 				CF5B98B72C35DA6C00C3B3E9 /* SFPRODISPLAYMEDIUM.otf */,
 				CF5B98B82C35DA6C00C3B3E9 /* SFPRODISPLAYREGULAR.otf */,
-				CF5B98B92C35DA6C00C3B3E9 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */,
-				CF5B98BA2C35DA6C00C3B3E9 /* SFPRODISPLAYTHINITALIC.OTF */,
-				CF5B98BB2C35DA6C00C3B3E9 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */,
 			);
 			path = "sf-pro-display";
+			sourceTree = "<group>";
+		};
+		CF5B98D32C36961200C3B3E9 /* FormView */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B98CD2C35F71300C3B3E9 /* FormTableViewCell.swift */,
+				CF5B98912C349CC800C3B3E9 /* FormViewModel.swift */,
+				CF5B98932C349CDF00C3B3E9 /* FormViewController.swift */,
+				CF5B98C92C35F3C100C3B3E9 /* FormViewProtocol.swift */,
+			);
+			path = FormView;
+			sourceTree = "<group>";
+		};
+		CF5B98D42C36963400C3B3E9 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B988F2C349CAF00C3B3E9 /* OnboardingStep.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		CF5B98D62C36968000C3B3E9 /* FinalView */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B98D92C36973500C3B3E9 /* SubsViewModel.swift */,
+				CF5B98992C35C3E400C3B3E9 /* FinalViewController.swift */,
+				CF5B98C62C35E05200C3B3E9 /* TermsView.swift */,
+			);
+			path = FinalView;
+			sourceTree = "<group>";
+		};
+		CF5B98D72C3696F100C3B3E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFBC4BC32C31A5E400561732 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CF5B98D82C36971900C3B3E9 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B98DB2C369BF000C3B3E9 /* IAPService.swift */,
+				CFC262E52C31AC820089691E /* OnboardingService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		CF5B98DF2C36B57000C3B3E9 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				CF5B98DD2C36B55200C3B3E9 /* SingleExtention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		CFBC4BAE2C31A5E300561732 = {
@@ -154,18 +196,15 @@
 			children = (
 				CFBC4BBA2C31A5E300561732 /* AppDelegate.swift */,
 				CFBC4BBC2C31A5E300561732 /* SceneDelegate.swift */,
-				CFBC4BC32C31A5E400561732 /* Assets.xcassets */,
 				CFBC4BC52C31A5E400561732 /* LaunchScreen.storyboard */,
 				CFBC4BC82C31A5E400561732 /* Info.plist */,
-				CFC262E52C31AC820089691E /* OnboardingService.swift */,
+				CF5B98D82C36971900C3B3E9 /* NetworkService */,
+				CF5B98DF2C36B57000C3B3E9 /* Extentions */,
+				CF5B98D72C3696F100C3B3E9 /* Resources */,
 				CF5B98B02C35C9B100C3B3E9 /* Fonts */,
-				CF5B988F2C349CAF00C3B3E9 /* OnboardingStep.swift */,
-				CF5B98912C349CC800C3B3E9 /* FormViewModel.swift */,
-				CF5B98C92C35F3C100C3B3E9 /* FormViewProtocol.swift */,
-				CF5B98932C349CDF00C3B3E9 /* FormViewController.swift */,
-				CF5B98CD2C35F71300C3B3E9 /* FormTableViewCell.swift */,
-				CF5B98992C35C3E400C3B3E9 /* FinalViewController.swift */,
-				CF5B98C62C35E05200C3B3E9 /* TermsView.swift */,
+				CF5B98D42C36963400C3B3E9 /* Structs */,
+				CF5B98D32C36961200C3B3E9 /* FormView */,
+				CF5B98D62C36968000C3B3E9 /* FinalView */,
 				CF5B98CF2C367B1800C3B3E9 /*  Configuration.storekit */,
 			);
 			path = UniverseGroup;
@@ -233,14 +272,8 @@
 			files = (
 				CF5B98C22C35DA6C00C3B3E9 /* SFPRODISPLAYREGULAR.otf in Resources */,
 				CF5B98C12C35DA6C00C3B3E9 /* SFPRODISPLAYMEDIUM.otf in Resources */,
-				CF5B98BF2C35DA6C00C3B3E9 /* SFPRODISPLAYHEAVYITALIC.OTF in Resources */,
 				CF5B98BE2C35DA6C00C3B3E9 /* SFPRODISPLAYBOLD.otf in Resources */,
-				CF5B98C42C35DA6C00C3B3E9 /* SFPRODISPLAYTHINITALIC.OTF in Resources */,
-				CF5B98C02C35DA6C00C3B3E9 /* SFPRODISPLAYLIGHTITALIC.OTF in Resources */,
-				CF5B98C52C35DA6C00C3B3E9 /* SFPRODISPLAYULTRALIGHTITALIC.OTF in Resources */,
 				CFBC4BC42C31A5E400561732 /* Assets.xcassets in Resources */,
-				CF5B98BD2C35DA6C00C3B3E9 /* SFPRODISPLAYBLACKITALIC.OTF in Resources */,
-				CF5B98C32C35DA6C00C3B3E9 /* SFPRODISPLAYSEMIBOLDITALIC.OTF in Resources */,
 				CF5B98D02C367B1800C3B3E9 /*  Configuration.storekit in Resources */,
 				CFBC4BC72C31A5E400561732 /* Base in Resources */,
 			);
@@ -279,13 +312,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF5B98922C349CC800C3B3E9 /* FormViewModel.swift in Sources */,
+				CF5B98DA2C36973500C3B3E9 /* SubsViewModel.swift in Sources */,
 				CF5B98942C349CDF00C3B3E9 /* FormViewController.swift in Sources */,
 				CF5B989A2C35C3E400C3B3E9 /* FinalViewController.swift in Sources */,
+				CF5B98DE2C36B55200C3B3E9 /* SingleExtention.swift in Sources */,
 				CFC262E62C31AC820089691E /* OnboardingService.swift in Sources */,
 				CF5B98CE2C35F71300C3B3E9 /* FormTableViewCell.swift in Sources */,
 				CF5B98902C349CAF00C3B3E9 /* OnboardingStep.swift in Sources */,
 				CF5B98CA2C35F3C100C3B3E9 /* FormViewProtocol.swift in Sources */,
 				CF5B98AF2C35C96A00C3B3E9 /* UIFont.swift in Sources */,
+				CF5B98DC2C369BF000C3B3E9 /* IAPService.swift in Sources */,
 				CFBC4BBB2C31A5E300561732 /* AppDelegate.swift in Sources */,
 				CF5B98C72C35E05200C3B3E9 /* TermsView.swift in Sources */,
 				CFBC4BBD2C31A5E300561732 /* SceneDelegate.swift in Sources */,

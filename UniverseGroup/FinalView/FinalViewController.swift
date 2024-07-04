@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import SnapKit
+import StoreKit
 
 class FinalViewController: UIViewController {
     
@@ -18,12 +19,40 @@ class FinalViewController: UIViewController {
     private let continueButton = UIButton()
     private let stackView = UIStackView()
     private let termsView = TermsView()
+
+    private let viewModel = SubscriptionViewModel()
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bind()
+    }
+    
+    private func bind(){
+        viewModel.fetched
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: {[weak self] fetchedPrice in
+            if fetchedPrice != "" {
+                self?.attributedStringSetUp(price: fetchedPrice)
+                self?.continueButton.isUserInteractionEnabled = true
+            }
+            else {
+                self?.continueButton.isUserInteractionEnabled = false
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    private func attributedStringSetUp(price: String){
+        let attributedString = NSMutableAttributedString(string: "Try 7 days for free\nthen ", attributes: [.foregroundColor: UIColor.subText, .font: UIFont.font(.SFPRODISPLAYMEDIUM, ofSize: 16)])
+        
+        attributedString.append(NSAttributedString(string: price, attributes: [.foregroundColor: UIColor.black, .font: UIFont.font(.SFPRODISPLAYBOLD, ofSize: 16)]))
+        attributedString.append(NSAttributedString(string: " per week, auto-renewable", attributes: [.foregroundColor: UIColor.subText, .font: UIFont.font(.SFPRODISPLAYMEDIUM, ofSize: 16)]))
+        subText.attributedText = attributedString
     }
     
     private func setupUI() {
+        continueButton.isUserInteractionEnabled = false;
         
         view.backgroundColor = .white
 
@@ -52,17 +81,14 @@ class FinalViewController: UIViewController {
         mainText.numberOfLines = 2
         mainText.textAlignment = .left
         view.addSubview(mainText)
-        
-        
-        subText.text = "Try 7 days for free\nthen $6.99 per week, auto-renewable"
+        attributedStringSetUp(price: "$6.99")
         subText.font = UIFont.font(.SFPRODISPLAYMEDIUM, ofSize: 16)
         subText.numberOfLines = 2
-        subText.textColor = UIColor(red: 110/255, green: 110/255, blue: 115/255, alpha: 1)
         subText.textAlignment = .left
         view.addSubview(subText)
         
         closeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
-        closeButton.tintColor = UIColor(red: 58/255, green: 60/255, blue: 61/255, alpha: 1)
+        closeButton.tintColor = .buttonTint
         view.addSubview(closeButton)
         
         imageView.snp.makeConstraints { make in
@@ -110,17 +136,17 @@ class FinalViewController: UIViewController {
             make.height.equalTo(56)
         }
         
-        
-
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
     
     @objc private func continueButtonTapped() {
+        viewModel.purchaseButtonTapped.onNext(())
         print("Continue button tapped on final screen")
     }
     
     @objc private func closeButtonTapped() {
+        dismiss(animated: true, completion: nil)
         print("Close button tapped on final screen")
     }
 }
